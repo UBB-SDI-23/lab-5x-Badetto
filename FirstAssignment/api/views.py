@@ -66,7 +66,7 @@ class FootballTeamsByAvgNetWorthDeals(generics.ListAPIView):
 
     def get_queryset(self):
         query = FootballTeam.objects\
-            .annotate(avg_networth=Avg('has__sponsor__netWorth'))\
+            .annotate(avg_networth=Avg('teams__sponsor__netWorth'))\
             .order_by('avg_networth')
         return query
 

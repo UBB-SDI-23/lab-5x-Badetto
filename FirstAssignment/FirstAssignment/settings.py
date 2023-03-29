@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api.apps.ApiConfig',
     'rest_framework',
+    'drf_spectacular',
     'django_filters',
     'corsheaders',
     'django_extensions',
@@ -48,6 +49,7 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': (
         'django_filters.rest_framework.DjangoFilterBackend',
     ),
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 MIDDLEWARE = [
@@ -139,4 +141,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 GRAPH_MODELS = {
     'all_applications': True,
     'graph_models': True,
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Football API',
+    'DESCRIPTION': 'Football API',
 }

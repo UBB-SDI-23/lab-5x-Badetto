@@ -1,0 +1,1208 @@
+openapi: 3.0.3
+info:
+  title: Football API
+  version: 0.0.0
+  description: Football API
+paths:
+  /api/football-team/:
+    get:
+      operationId: api_football_team_list
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FootballTeam'
+          description: ''
+    post:
+      operationId: api_football_team_create
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FootballTeam'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/FootballTeam'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/FootballTeam'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FootballTeam'
+          description: ''
+  /api/football-team-sponsor-relation/:
+    get:
+      operationId: api_football_team_sponsor_relation_list
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Has'
+          description: ''
+    post:
+      operationId: api_football_team_sponsor_relation_create
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Has'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Has'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Has'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Has'
+          description: ''
+  /api/football-team-sponsor-relation/{id}/:
+    get:
+      operationId: api_football_team_sponsor_relation_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Has'
+          description: ''
+    put:
+      operationId: api_football_team_sponsor_relation_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Has'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Has'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Has'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Has'
+          description: ''
+    patch:
+      operationId: api_football_team_sponsor_relation_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedHas'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedHas'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedHas'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Has'
+          description: ''
+    delete:
+      operationId: api_football_team_sponsor_relation_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/football-team/{football_team_id}/sponsor/:
+    get:
+      operationId: api_football_team_sponsor_retrieve
+      parameters:
+      - in: path
+        name: football_team_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HasNew'
+          description: ''
+    post:
+      operationId: api_football_team_sponsor_create
+      parameters:
+      - in: path
+        name: football_team_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HasNew'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/HasNew'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/HasNew'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HasNew'
+          description: ''
+  /api/football-team/{id}/:
+    get:
+      operationId: api_football_team_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FootballTeamId'
+          description: ''
+    put:
+      operationId: api_football_team_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FootballTeamId'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/FootballTeamId'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/FootballTeamId'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FootballTeamId'
+          description: ''
+    patch:
+      operationId: api_football_team_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedFootballTeamId'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedFootballTeamId'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedFootballTeamId'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FootballTeamId'
+          description: ''
+    delete:
+      operationId: api_football_team_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/football-team/avg-networth/:
+    get:
+      operationId: api_football_team_avg_networth_list
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FootballTeamSponsor'
+          description: ''
+  /api/football-team/nr-sponsors/:
+    post:
+      operationId: api_football_team_nr_sponsors_create
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FootballTeamNrSponsor'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/FootballTeamNrSponsor'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/FootballTeamNrSponsor'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FootballTeamNrSponsor'
+          description: ''
+  /api/player/:
+    get:
+      operationId: api_player_list
+      parameters:
+      - in: query
+        name: rating__gt
+        schema:
+          type: integer
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Player'
+          description: ''
+    post:
+      operationId: api_player_create
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Player'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Player'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Player'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Player'
+          description: ''
+  /api/player/{id}/:
+    get:
+      operationId: api_player_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlayerJustId'
+          description: ''
+    put:
+      operationId: api_player_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlayerJustId'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PlayerJustId'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PlayerJustId'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlayerJustId'
+          description: ''
+    patch:
+      operationId: api_player_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedPlayerJustId'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedPlayerJustId'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedPlayerJustId'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlayerJustId'
+          description: ''
+    delete:
+      operationId: api_player_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/schema/:
+    get:
+      operationId: api_schema_retrieve
+      description: |-
+        OpenApi3 schema for this API. Format can be selected via content negotiation.
+
+        - YAML: application/vnd.oai.openapi
+        - JSON: application/vnd.oai.openapi+json
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - yaml
+      - in: query
+        name: lang
+        schema:
+          type: string
+          enum:
+          - af
+          - ar
+          - ar-dz
+          - ast
+          - az
+          - be
+          - bg
+          - bn
+          - br
+          - bs
+          - ca
+          - cs
+          - cy
+          - da
+          - de
+          - dsb
+          - el
+          - en
+          - en-au
+          - en-gb
+          - eo
+          - es
+          - es-ar
+          - es-co
+          - es-mx
+          - es-ni
+          - es-ve
+          - et
+          - eu
+          - fa
+          - fi
+          - fr
+          - fy
+          - ga
+          - gd
+          - gl
+          - he
+          - hi
+          - hr
+          - hsb
+          - hu
+          - hy
+          - ia
+          - id
+          - ig
+          - io
+          - is
+          - it
+          - ja
+          - ka
+          - kab
+          - kk
+          - km
+          - kn
+          - ko
+          - ky
+          - lb
+          - lt
+          - lv
+          - mk
+          - ml
+          - mn
+          - mr
+          - ms
+          - my
+          - nb
+          - ne
+          - nl
+          - nn
+          - os
+          - pa
+          - pl
+          - pt
+          - pt-br
+          - ro
+          - ru
+          - sk
+          - sl
+          - sq
+          - sr
+          - sr-latn
+          - sv
+          - sw
+          - ta
+          - te
+          - tg
+          - th
+          - tk
+          - tr
+          - tt
+          - udm
+          - uk
+          - ur
+          - uz
+          - vi
+          - zh-hans
+          - zh-hant
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/vnd.oai.openapi:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/yaml:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/vnd.oai.openapi+json:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/sponsor/:
+    get:
+      operationId: api_sponsor_list
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Sponsor'
+          description: ''
+    post:
+      operationId: api_sponsor_create
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Sponsor'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Sponsor'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Sponsor'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Sponsor'
+          description: ''
+  /api/sponsor/{id}/:
+    get:
+      operationId: api_sponsor_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SponsorsWithFootballTeams'
+          description: ''
+    put:
+      operationId: api_sponsor_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SponsorsWithFootballTeams'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/SponsorsWithFootballTeams'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SponsorsWithFootballTeams'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SponsorsWithFootballTeams'
+          description: ''
+    patch:
+      operationId: api_sponsor_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedSponsorsWithFootballTeams'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedSponsorsWithFootballTeams'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedSponsorsWithFootballTeams'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SponsorsWithFootballTeams'
+          description: ''
+    delete:
+      operationId: api_sponsor_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    FootballTeam:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        nickname:
+          type: string
+          maxLength: 100
+        foundingYear:
+          type: integer
+        value:
+          type: integer
+        professionalStatus:
+          type: string
+          maxLength: 100
+      required:
+      - id
+      - name
+    FootballTeamId:
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 100
+        nickname:
+          type: string
+          maxLength: 100
+        foundingYear:
+          type: integer
+        value:
+          type: integer
+        professionalStatus:
+          type: string
+          maxLength: 100
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/Player'
+      required:
+      - content
+      - name
+    FootballTeamNrSponsor:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        nr_sponsors:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        nickname:
+          type: string
+          maxLength: 100
+        foundingYear:
+          type: integer
+        value:
+          type: integer
+        professionalStatus:
+          type: string
+          maxLength: 100
+      required:
+      - id
+      - name
+      - nr_sponsors
+    FootballTeamSponsor:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        avg_networth:
+          type: number
+          format: double
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        nickname:
+          type: string
+          maxLength: 100
+        foundingYear:
+          type: integer
+        value:
+          type: integer
+        professionalStatus:
+          type: string
+          maxLength: 100
+      required:
+      - avg_networth
+      - id
+      - name
+    Has:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        dealValue:
+          type: integer
+        type:
+          type: string
+          maxLength: 100
+        team:
+          type: integer
+        sponsor:
+          type: integer
+      required:
+      - dealValue
+      - id
+      - sponsor
+      - team
+      - type
+    HasNew:
+      type: object
+      properties:
+        sponsor:
+          type: integer
+        dealValue:
+          type: integer
+        type:
+          type: string
+          maxLength: 255
+      required:
+      - dealValue
+      - sponsor
+      - type
+    Nested:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        nickname:
+          type: string
+          maxLength: 100
+        foundingYear:
+          type: integer
+        value:
+          type: integer
+        professionalStatus:
+          type: string
+          maxLength: 100
+      required:
+      - id
+      - name
+    PatchedFootballTeamId:
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 100
+        nickname:
+          type: string
+          maxLength: 100
+        foundingYear:
+          type: integer
+        value:
+          type: integer
+        professionalStatus:
+          type: string
+          maxLength: 100
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/Player'
+    PatchedHas:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        dealValue:
+          type: integer
+        type:
+          type: string
+          maxLength: 100
+        team:
+          type: integer
+        sponsor:
+          type: integer
+    PatchedPlayerJustId:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        number:
+          type: integer
+        age:
+          type: integer
+        rating:
+          type: integer
+        position:
+          type: string
+          maxLength: 100
+        nationality:
+          type: string
+          maxLength: 100
+        team:
+          allOf:
+          - $ref: '#/components/schemas/Nested'
+          readOnly: true
+    PatchedSponsorsWithFootballTeams:
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 100
+        foundingYear:
+          type: integer
+        nationality:
+          type: string
+          maxLength: 100
+        netWorth:
+          type: integer
+        domain:
+          type: string
+          maxLength: 100
+        sponsors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Has'
+    Player:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        number:
+          type: integer
+        age:
+          type: integer
+        rating:
+          type: integer
+        position:
+          type: string
+          maxLength: 100
+        nationality:
+          type: string
+          maxLength: 100
+        team:
+          type: integer
+          nullable: true
+      required:
+      - id
+      - name
+      - nationality
+    PlayerJustId:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        number:
+          type: integer
+        age:
+          type: integer
+        rating:
+          type: integer
+        position:
+          type: string
+          maxLength: 100
+        nationality:
+          type: string
+          maxLength: 100
+        team:
+          allOf:
+          - $ref: '#/components/schemas/Nested'
+          readOnly: true
+      required:
+      - id
+      - name
+      - nationality
+      - team
+    Sponsor:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        foundingYear:
+          type: integer
+        nationality:
+          type: string
+          maxLength: 100
+        netWorth:
+          type: integer
+        domain:
+          type: string
+          maxLength: 100
+      required:
+      - domain
+      - foundingYear
+      - id
+      - name
+      - nationality
+      - netWorth
+    SponsorsWithFootballTeams:
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 100
+        foundingYear:
+          type: integer
+        nationality:
+          type: string
+          maxLength: 100
+        netWorth:
+          type: integer
+        domain:
+          type: string
+          maxLength: 100
+        sponsors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Has'
+      required:
+      - domain
+      - foundingYear
+      - name
+      - nationality
+      - netWorth
+      - sponsors
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
