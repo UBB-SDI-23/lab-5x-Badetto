@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { DetailsComponent } from './features/footballteam/components/details/details.component';
 import { AddComponent } from './features/footballteam/components/add/add.component';
 import { FormsModule } from '@angular/forms';
+import { EditComponent } from './features/footballteam/components/edit/edit.component';
+import { DeleteComponent } from './features/footballteam/components/delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     OverviewComponent,
     DetailsComponent,
-    AddComponent
+    AddComponent,
+    EditComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,

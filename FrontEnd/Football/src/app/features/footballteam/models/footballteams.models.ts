@@ -1,5 +1,5 @@
 import { NrPlayers } from "./nrplayers.models";
-import { Player } from "./players.models";
+import { EditPlayerDto, Player } from "./players.models";
 
 export interface FootballTeam{
     id: number;
@@ -18,4 +18,13 @@ export interface AddFootballTeamDto{
     foundingYear: number;
     value: number;
     professionalStatus: string;
+}
+
+export interface EditFootballTeamDto{
+    name: string;
+    nickname: string;
+    foundingYear: number;
+    value: number;
+    professionalStatus: string;
+    content: EditPlayerDto[];
 }

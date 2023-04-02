@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from 'src/app/common/services/services.api.service.service';
-import { AddFootballTeamDto, FootballTeam } from '../../models/footballteams.models';
+import { AddFootballTeamDto } from '../../models/footballteams.models';
 
 @Component({
   selector: 'app-add',

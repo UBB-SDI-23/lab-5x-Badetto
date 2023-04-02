@@ -5,5 +5,15 @@ export interface Player{
     age: number,
     rating: number,
     position: string,
-    nationality: string
+    nationality: string,
+}
+
+export interface EditPlayerDto{
+    name: string;
+    number: number,
+    age: number,
+    rating: number,
+    position: string,
+    nationality: string,
+    team: number
 }

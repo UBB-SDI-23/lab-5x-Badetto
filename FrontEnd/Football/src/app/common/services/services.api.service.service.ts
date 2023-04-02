@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AddFootballTeamDto, FootballTeam } from 'src/app/features/footballteam/models/footballteams.models';
+import { AddFootballTeamDto, EditFootballTeamDto, FootballTeam } from 'src/app/features/footballteam/models/footballteams.models';
 import { NrPlayers } from 'src/app/features/footballteam/models/nrplayers.models';
 
 @Injectable({
@@ -23,6 +23,12 @@ export class ApiService {
   }
   addFootballTeam(footballteam: AddFootballTeamDto): Observable<FootballTeam>{
     return this.http.post(`${this.baseurl}football-team/`, footballteam) as Observable<FootballTeam>
-  }
 
+  }
+  editFootballTeam(footballTeamID: number, footballteam: EditFootballTeamDto): Observable<FootballTeam>{
+    return this.http.put(`${this.baseurl}football-team/${footballTeamID}/`, footballteam) as Observable<FootballTeam>
+  }
+  deleteFootballTeam(footballTeamID: number): Observable<FootballTeam>{
+    return this.http.delete(`${this.baseurl}football-team/${footballTeamID}/`) as Observable<FootballTeam>
+  }
 }

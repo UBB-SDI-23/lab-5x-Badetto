@@ -1,0 +1,15 @@
+<h2>Edit a football team:</h2>
+<form (submit)="editFootballTeam()">
+    <label for="name">Name:</label>
+    <input type="text" name="name" [(ngModel)]="name"> <br>
+    <label for="nickname">Nickname:</label>
+    <input type="text" name="nickname" [(ngModel)]="nickname"> <br>
+    <label for="foundingYear">Founding Year:</label>
+    <input type="number" name="foundingYear" [(ngModel)]="foundingYear"> <br>
+    <label for="value">Value:</label>
+    <input type="number" name="value" [(ngModel)]="value"> <br>
+    <label for="professionalStatus">Professional Status:</label>
+    <input type="text" name="professionalStatus" [(ngModel)]="professionalStatus">
+    <br>
+    <button type="submit">Edit Football Team</button>
+</form>
