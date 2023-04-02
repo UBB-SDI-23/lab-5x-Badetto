@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from .models import FootballTeam, Player, Sponsor, Has
 from .serializers import FootballTeamSerializer, PlayerSerializer, SponsorSerializer,\
     FootballTeamIdSerializer, PlayerJustIdSerializer, HasSerializer, FootballTeamSponsorSerializer,\
-    FootballTeamNrSponsorSerializer, SponsorsWithFootballTeamsSerializer, HasNewSerializer
+    FootballTeamNrSponsorSerializer, SponsorsWithFootballTeamsSerializer, HasNewSerializer, FootballTeamNrPlayerSerializer
 from django_filters.rest_framework import DjangoFilterBackend
 
 
@@ -80,6 +80,15 @@ class FootballTeamsByNrOfSponsors(generics.CreateAPIView):
             .order_by('-nr_sponsors')
         return query
 
+
+class FootballTeamsByNrOfPlayers(generics.ListAPIView):
+    serializer_class = FootballTeamNrPlayerSerializer
+
+    def get_queryset(self):
+        query = FootballTeam.objects\
+            .annotate(nr_players=Count('content'))\
+            .order_by('-nr_players')
+        return query
 
 class HasCreateView(generics.CreateAPIView):
     serializer_class = HasNewSerializer

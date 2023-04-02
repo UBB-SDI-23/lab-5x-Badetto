@@ -375,6 +375,24 @@ paths:
                 items:
                   $ref: '#/components/schemas/FootballTeamSponsor'
           description: ''
+  /api/football-team/nr-players/:
+    get:
+      operationId: api_football_team_nr_players_list
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FootballTeamNrPlayer'
+          description: ''
   /api/football-team/nr-sponsors/:
     post:
       operationId: api_football_team_nr_sponsors_create
@@ -897,6 +915,22 @@ components:
       required:
       - content
       - name
+    FootballTeamNrPlayer:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        nr_players:
+          type: integer
+          readOnly: true
+      required:
+      - id
+      - name
+      - nr_players
     FootballTeamNrSponsor:
       type: object
       properties:

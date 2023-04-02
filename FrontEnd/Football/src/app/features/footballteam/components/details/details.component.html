@@ -1,0 +1,18 @@
+<ng-container *ngIf="footballTeam">
+    <div>
+        Name:{{footballTeam.name}} <br>
+        Nickname:{{footballTeam.nickname}} <br>
+        Founding Year:{{footballTeam.foundingYear}} <br>
+        Value:{{footballTeam.value}} <br>
+        Professional Status: {{footballTeam.professionalStatus}}
+        <ng-container *ngIf="footballTeam.content?.length">
+            <p> Players: </p>
+            <p *ngFor="let player of footballTeam.content; let i = index">
+                {{i+1}}. {{player.name}}
+            </p>
+        </ng-container>
+        <ng-container *ngIf="!footballTeam.content?.length">
+            <p> This team has no players. </p>
+        </ng-container>
+    </div>
+</ng-container>

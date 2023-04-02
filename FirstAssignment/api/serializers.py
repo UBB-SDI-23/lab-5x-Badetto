@@ -57,6 +57,14 @@ class FootballTeamNrSponsorSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class FootballTeamNrPlayerSerializer(serializers.ModelSerializer):
+    nr_players = serializers.IntegerField(read_only=True)
+
+    class Meta:
+        model = FootballTeam
+        fields = ('id', 'name', 'nr_players',)
+
+
 class SponsorsWithFootballTeamsSerializer(serializers.ModelSerializer):
     sponsors = HasSerializer(many=True)
 
