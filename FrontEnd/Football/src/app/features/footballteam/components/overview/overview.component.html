@@ -7,14 +7,16 @@
             <th>Name</th>
             <th>Nickname</th>
             <th>Value</th>
+            <th>Players number</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let footballteam of footballteams; let i = index">
+        <tr *ngFor="let footballteam of footballteams; let i = index; let nr of nrplayers">
             <td><a (click)="goToDetails(footballteam.id)" class="clickable">{{i+1}}</a></td>
             <td>{{footballteam.name}}</td>
             <td>{{footballteam.nickname}}</td>
             <td>{{footballteam.value}}</td>
+            <td>{{nr}}</td>
         </tr>
     </tbody>
 </table>

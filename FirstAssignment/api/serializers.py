@@ -62,7 +62,7 @@ class FootballTeamNrPlayerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = FootballTeam
-        fields = ('id', 'name', 'nr_players',)
+        fields = ('nr_players',)
 
 
 class SponsorsWithFootballTeamsSerializer(serializers.ModelSerializer):

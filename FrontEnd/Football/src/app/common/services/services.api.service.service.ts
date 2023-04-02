@@ -17,4 +17,7 @@ export class ApiService {
   getFootBallTeamAndPlayers(courseId: number): Observable<FootballTeam>{
     return this.http.get(`${this.baseurl}football-team/${courseId}/`) as Observable<FootballTeam>
   }
+  getNrSponsors(): Observable<number[]>{
+    return this.http.get(`${this.baseurl}football-team/nr-sponsors/`) as Observable<number[]>
+  }
 }

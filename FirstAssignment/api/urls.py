@@ -15,7 +15,7 @@ urlpatterns = [
     path('football-team-sponsor-relation/<int:pk>/', HasDetail.as_view()),
     path('football-team/avg-networth/', FootballTeamsByAvgNetWorthDeals.as_view()),
     path('football-team/nr-sponsors/', FootballTeamsByNrOfSponsors.as_view()),
-    path('football-team/nr-players/', FootballTeamsByNrOfPlayers.as_view()),
+    path('football-team/<int:pk>/nr-players/', FootballTeamsByNrOfPlayers.as_view()),
     path('football-team/<int:football_team_id>/sponsor/', HasCreateView.as_view()),
     path('schema/', SpectacularAPIView.as_view(), name='schema'),
     path('schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),

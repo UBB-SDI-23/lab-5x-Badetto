@@ -81,13 +81,12 @@ class FootballTeamsByNrOfSponsors(generics.CreateAPIView):
         return query
 
 
-class FootballTeamsByNrOfPlayers(generics.ListAPIView):
+class FootballTeamsByNrOfPlayers(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = FootballTeamNrPlayerSerializer
 
     def get_queryset(self):
         query = FootballTeam.objects\
-            .annotate(nr_players=Count('content'))\
-            .order_by('-nr_players')
+            .annotate(nr_players=Count('content'))
         return query
 
 class HasCreateView(generics.CreateAPIView):

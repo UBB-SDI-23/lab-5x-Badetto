@@ -10,12 +10,16 @@ import { Router } from '@angular/router';
 })
 export class OverviewComponent implements OnInit {
   footballteams: FootballTeam[] = [];
+  nrplayers: number[] = [];
 
   constructor(private apiSvc: ApiService,
     private router: Router) {}
   ngOnInit(): void {
     this.apiSvc.getFootballTeams().subscribe((result: FootballTeam[]) => {
       this.footballteams = result;
+    });
+    this.apiSvc.getNrSponsors().subscribe((result: number[]) => {
+      this.nrplayers = result;
     });
   }
 
