@@ -30,6 +30,7 @@ export class AddComponent {
         this.foundingYear=0;
         this.value=0;
         this.professionalStatus="";
+        alert("Team was added succesfully!")
       }
       else{
         alert("Professional Status must be either: Professional, Semi-Professional or Amateur")

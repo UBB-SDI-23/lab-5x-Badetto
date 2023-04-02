@@ -33,10 +33,10 @@ export class EditComponent implements OnInit{
           foundingYear: this.foundingYear,
           value: this.value,
           professionalStatus: this.professionalStatus,
-          content: []
+          content: this.content
         }
         console.log(footballTeam, this.footballTeamID)
-        this.apiSrv.editFootballTeam(this.footballTeamID, footballTeam).subscribe(result => console.log(result));
+        this.apiSrv.editFootballTeam(this.footballTeamID, footballTeam).subscribe();
         this.name="";
         this.nickname="";
         this.foundingYear=0;

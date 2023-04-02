@@ -27,7 +27,7 @@ class HasSerializer(serializers.ModelSerializer):
 
 
 class FootballTeamIdSerializer(serializers.ModelSerializer):
-    content = PlayerSerializer(many=True)
+    content = PlayerSerializer(many=True, read_only=True)
 
     class Meta:
         model = FootballTeam
