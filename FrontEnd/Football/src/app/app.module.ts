@@ -7,18 +7,22 @@ import { HomeComponent } from './common/home/home.component';
 import { OverviewComponent } from './features/footballteam/components/overview/overview.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailsComponent } from './features/footballteam/components/details/details.component';
+import { AddComponent } from './features/footballteam/components/add/add.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     OverviewComponent,
-    DetailsComponent
+    DetailsComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './common/home/home.component';
 import { OverviewComponent } from './features/footballteam/components/overview/overview.component';
 import { DetailsComponent } from './features/footballteam/components/details/details.component';
+import { AddComponent } from './features/footballteam/components/add/add.component';
 
 const routes: Routes = [
   {
@@ -14,9 +15,14 @@ const routes: Routes = [
     component: OverviewComponent
   },
   {
+    path: "football-team/add",
+    component: AddComponent
+  },
+  {
     path: "football-team/:id",
     component: DetailsComponent
   }
+
 ];
 
 @NgModule({

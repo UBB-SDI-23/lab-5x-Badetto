@@ -28,4 +28,7 @@ export class OverviewComponent implements OnInit {
   goToDetails(courseId: number){
     this.router.navigateByUrl(`football-team/${courseId}`)
   }
+  goToAdd(){
+    this.router.navigateByUrl(`football-team/add`);
+  }
 }

@@ -11,3 +11,11 @@ export interface FootballTeam{
     content: Player[];
     nrplayers: number;
 }
+
+export interface AddFootballTeamDto{
+    name: string;
+    nickname: string;
+    foundingYear: number;
+    value: number;
+    professionalStatus: string;
+}
