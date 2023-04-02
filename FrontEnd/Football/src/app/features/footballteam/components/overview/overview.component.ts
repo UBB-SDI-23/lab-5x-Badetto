@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FootballTeam } from '../../models/footballteams.models';
 import { ApiService } from 'src/app/common/services/services.api.service.service';
 import { Router } from '@angular/router';
+import { NrPlayers } from '../../models/nrplayers.models';
 
 @Component({
   selector: 'app-overview',
@@ -10,19 +11,20 @@ import { Router } from '@angular/router';
 })
 export class OverviewComponent implements OnInit {
   footballteams: FootballTeam[] = [];
-  nrplayers: number[] = [];
+  numberplayers: Number[] = [];
 
   constructor(private apiSvc: ApiService,
     private router: Router) {}
   ngOnInit(): void {
     this.apiSvc.getFootballTeams().subscribe((result: FootballTeam[]) => {
-      this.footballteams = result;
-    });
-    this.apiSvc.getNrSponsors().subscribe((result: number[]) => {
-      this.nrplayers = result;
+      for (let i = 0; i < result.length; i++) {
+        this.footballteams.push(result[i]) 
+        this.apiSvc.getNrPlayers(result[i].id).subscribe((result2: NrPlayers) =>{
+          this.footballteams[i]["nrplayers"] = result2.nr_players
+        })
+      }
     });
   }
-
   goToDetails(courseId: number){
     this.router.navigateByUrl(`football-team/${courseId}`)
   }

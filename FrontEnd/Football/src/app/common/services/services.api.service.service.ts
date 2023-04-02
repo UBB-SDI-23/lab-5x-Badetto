@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FootballTeam } from 'src/app/features/footballteam/models/footballteams.models';
+import { NrPlayers } from 'src/app/features/footballteam/models/nrplayers.models';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class ApiService {
   getFootBallTeamAndPlayers(courseId: number): Observable<FootballTeam>{
     return this.http.get(`${this.baseurl}football-team/${courseId}/`) as Observable<FootballTeam>
   }
-  getNrSponsors(): Observable<number[]>{
-    return this.http.get(`${this.baseurl}football-team/nr-sponsors/`) as Observable<number[]>
+  getNrPlayers(footballTeamID: number): Observable<NrPlayers>{
+    return this.http.get(`${this.baseurl}football-team/${footballTeamID}/nr-players/`) as Observable<NrPlayers>
   }
 }

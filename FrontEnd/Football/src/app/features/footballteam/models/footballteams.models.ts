@@ -1,3 +1,4 @@
+import { NrPlayers } from "./nrplayers.models";
 import { Player } from "./players.models";
 
 export interface FootballTeam{
@@ -8,4 +9,5 @@ export interface FootballTeam{
     value: number;
     professionalStatus: string;
     content: Player[];
+    nrplayers: number;
 }

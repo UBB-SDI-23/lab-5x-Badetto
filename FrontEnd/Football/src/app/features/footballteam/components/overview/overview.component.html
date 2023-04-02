@@ -11,12 +11,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let footballteam of footballteams; let i = index; let nr of nrplayers">
+        <tr *ngFor="let footballteam of footballteams; let i = index">
             <td><a (click)="goToDetails(footballteam.id)" class="clickable">{{i+1}}</a></td>
             <td>{{footballteam.name}}</td>
             <td>{{footballteam.nickname}}</td>
             <td>{{footballteam.value}}</td>
-            <td>{{nr}}</td>
+            <td>{{footballteam.nrplayers}}</td>
         </tr>
     </tbody>
 </table>
