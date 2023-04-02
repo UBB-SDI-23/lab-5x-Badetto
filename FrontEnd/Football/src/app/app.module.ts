@@ -11,6 +11,7 @@ import { AddComponent } from './features/footballteam/components/add/add.compone
 import { FormsModule } from '@angular/forms';
 import { EditComponent } from './features/footballteam/components/edit/edit.component';
 import { DeleteComponent } from './features/footballteam/components/delete/delete.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [

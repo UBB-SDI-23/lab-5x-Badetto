@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/common/services/services.api.service.service';
-import { EditFootballTeamDto } from '../../models/footballteams.models';
+import { EditFootballTeamDto, FootballTeam } from '../../models/footballteams.models';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EditPlayerDto, Player } from '../../models/players.models';
 
@@ -22,6 +22,13 @@ export class EditComponent implements OnInit{
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       this.footballTeamID = params['id'];
+      this.apiSrv.getFootBallTeamAndPlayers(this.footballTeamID).subscribe((data : FootballTeam) => {
+        this.name = data.name;
+        this.nickname = data.nickname;
+        this.foundingYear = data.foundingYear;
+        this.value = data.value;
+        this.professionalStatus = data.professionalStatus;
+      })
     })
   }
   editFootballTeam(){
