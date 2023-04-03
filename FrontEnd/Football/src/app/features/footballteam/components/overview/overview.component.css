@@ -4,6 +4,12 @@
     text-decoration: underline;
     font-style: bold;
 }
+.clickable:active{
+    cursor: pointer;
+    color: red;
+    text-decoration: underline;
+    font-style: bold;
+}
 
 table, th, td{
     border: 1px solid;

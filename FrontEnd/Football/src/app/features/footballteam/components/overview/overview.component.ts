@@ -31,4 +31,7 @@ export class OverviewComponent implements OnInit {
   goToAdd(){
     this.router.navigateByUrl(`football-team/add`);
   }
+  sortName(){
+    this.footballteams.sort((a, b) => a.name.localeCompare(b.name))
+  }
 }

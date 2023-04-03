@@ -43,7 +43,7 @@ export class EditComponent implements OnInit{
           content: this.content
         }
         console.log(footballTeam, this.footballTeamID)
-        this.apiSrv.editFootballTeam(this.footballTeamID, footballTeam).subscribe();
+        this.apiSrv.editFootballTeam(this.footballTeamID, footballTeam).subscribe(result => console.log(result));
         this.name="";
         this.nickname="";
         this.foundingYear=0;
