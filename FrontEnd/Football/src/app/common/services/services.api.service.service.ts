@@ -9,7 +9,7 @@ import { NrPlayers } from 'src/app/features/footballteam/models/nrplayers.models
 })
 export class ApiService {
 
-  baseurl = 'http://ec2-16-170-135-166.eu-north-1.compute.amazonaws.com/api/';
+  baseurl = 'api/';
   constructor(private http: HttpClient) { }
 
   getFootballTeams() : Observable<FootballTeam[]>{  
