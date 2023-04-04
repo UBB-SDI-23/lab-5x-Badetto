@@ -21,6 +21,6 @@ export class DeleteComponent implements OnInit{
     alert("Team was deleted succesfully!")
   }
   cancel(){
-    this.router.navigateByUrl(`football-team/edit/${this.footballTeamID}`);
+    this.router.navigateByUrl(`football-team/${this.footballTeamID}`);
   }
 }

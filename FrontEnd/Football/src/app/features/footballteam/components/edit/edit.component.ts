@@ -44,11 +44,11 @@ export class EditComponent implements OnInit{
         }
         console.log(footballTeam, this.footballTeamID)
         this.apiSrv.editFootballTeam(this.footballTeamID, footballTeam).subscribe(result => console.log(result));
-        this.name="";
-        this.nickname="";
-        this.foundingYear=0;
-        this.value=0;
-        this.professionalStatus="";
+        this.name= footballTeam.name;
+        this.nickname=footballTeam.nickname;
+        this.foundingYear=footballTeam.foundingYear;
+        this.value=footballTeam.value;
+        this.professionalStatus=footballTeam.professionalStatus;
       }
       else{
         alert("Professional Status must be either: Professional, Semi-Professional or Amateur")
