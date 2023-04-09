@@ -9,7 +9,7 @@ import { NrPlayers } from 'src/app/features/footballteam/models/nrplayers.models
 })
 export class ApiService {
 
-  baseurl = 'api/';
+  baseurl = 'https://sdi-assignment.mooo.com/api/';
   constructor(private http: HttpClient) { }
 
   getFootballTeams() : Observable<FootballTeam[]>{  
