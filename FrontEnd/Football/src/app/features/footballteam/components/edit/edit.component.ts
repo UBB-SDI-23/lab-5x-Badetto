@@ -42,7 +42,7 @@ export class EditComponent implements OnInit{
           professionalStatus: this.professionalStatus,
           content: this.content
         }
-        console.log(footballTeam, this.footballTeamID)
+        alert("Team was updated succesfully!")
         this.apiSrv.editFootballTeam(this.footballTeamID, footballTeam).subscribe(result => console.log(result));
         this.name= footballTeam.name;
         this.nickname=footballTeam.nickname;
