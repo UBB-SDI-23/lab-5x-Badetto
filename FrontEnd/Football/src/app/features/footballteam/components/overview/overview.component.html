@@ -2,23 +2,33 @@
 <div>
 <button (click)="goToAdd()">Add Football Team</button>
 </div>
-<table>
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th><a (click)="sortName()" class="clickable">Name</a></th>
-            <th>Nickname</th>
-            <th>Value</th>
-            <th>Players number</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let footballteam of footballteams; let i = index">
-            <td><a (click)="goToDetails(footballteam.id)" class="clickable">{{i+1}}</a></td>
-            <td>{{footballteam.name}}</td>
-            <td>{{footballteam.nickname}}</td>
-            <td>{{footballteam.value}}</td>
-            <td>{{footballteam.nrplayers}}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="footballteams" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>Id</th>
+            <td mat-cell *matCellDef="let footballteam; columns: displayedColumns; let i = index;"><a (click)="goToDetails(footballteam.id)" class="clickable">{{i + 1}}</a></td>
+        </ng-container>
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef><a (click)="sortName()" class="clickable">Name</a></th>
+            <td mat-cell *matCellDef="let footballteam">{{footballteam.name}}</td>
+        </ng-container>
+        <ng-container matColumnDef="nickname">
+            <th mat-header-cell *matHeaderCellDef>Nickname</th>
+            <td mat-cell *matCellDef="let footballteam">{{footballteam.nickname}}</td>
+        </ng-container>
+        <ng-container matColumnDef="value">
+            <th mat-header-cell *matHeaderCellDef>Value</th>
+            <td mat-cell *matCellDef="let footballteam">{{footballteam.value}}</td>
+        </ng-container>
+        <ng-container matColumnDef="nrplayers">
+            <th mat-header-cell *matHeaderCellDef>Players number</th>
+            <td mat-cell *matCellDef="let footballteam">{{footballteam.nrplayers}}</td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons    
+        aria-label="Select page of periodic elements">
+    </mat-paginator>
+</div>  
