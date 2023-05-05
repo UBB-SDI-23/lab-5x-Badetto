@@ -1,15 +1,29 @@
-<h2>Edit a football team:</h2>
-<form (submit)="editFootballTeam()">
-    <label for="name">Name:</label>
-    <input type="text" name="name" [(ngModel)]="name"> <br>
-    <label for="nickname">Nickname:</label>
-    <input type="text" name="nickname" [(ngModel)]="nickname"> <br>
-    <label for="foundingYear">Founding Year:</label>
-    <input type="number" name="foundingYear" [(ngModel)]="foundingYear"> <br>
-    <label for="value">Value:</label>
-    <input type="number" name="value" [(ngModel)]="value"> <br>
-    <label for="professionalStatus">Professional Status:</label>
-    <input type="text" name="professionalStatus" [(ngModel)]="professionalStatus">
-    <br>
-    <button type="submit">Edit Football Team</button>
+<h2 class="header">Edit a Football Team:</h2>
+<form class="form" (submit)="editFootballTeam()">
+  <mat-form-field class="input-field">
+    <mat-label>Name</mat-label>
+    <input matInput type="text" name="name" [(ngModel)]="name">
+  </mat-form-field>
+
+  <mat-form-field class="input-field">
+    <mat-label>Nickname</mat-label>
+    <input matInput type="text" name="nickname" [(ngModel)]="nickname">
+  </mat-form-field>
+
+  <mat-form-field class="input-field">
+    <mat-label>Founding Year</mat-label>
+    <input matInput type="number" name="foundingYear" [(ngModel)]="foundingYear">
+  </mat-form-field>
+
+  <mat-form-field class="input-field">
+    <mat-label>Value</mat-label>
+    <input matInput type="number" name="value" [(ngModel)]="value">
+  </mat-form-field>
+
+  <mat-form-field class="input-field">
+    <mat-label>Professional Status</mat-label>
+    <input matInput type="text" name="professionalStatus" [(ngModel)]="professionalStatus">
+  </mat-form-field>
+
+  <button mat-raised-button type="submit">Edit Football Team</button>
 </form>

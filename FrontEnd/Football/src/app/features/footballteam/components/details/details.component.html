@@ -1,21 +1,31 @@
 <ng-container *ngIf="footballTeam">
-    <div>
-        Name:{{footballTeam.name}} <br>
-        Nickname:{{footballTeam.nickname}} <br>
-        Founding Year:{{footballTeam.foundingYear}} <br>
-        Value:{{footballTeam.value}} <br>
-        Professional Status: {{footballTeam.professionalStatus}}
-        <ng-container *ngIf="footballTeam.content?.length">
-            <p> Players: </p>
-            <p *ngFor="let player of footballTeam.content; let i = index">
-                {{i+1}}. {{player.name}}
-            </p>
-        </ng-container>
-        <ng-container *ngIf="!footballTeam.content?.length">
-            <p> This team has no players. </p>
-        </ng-container>
-    </div>
+  <mat-card class="football-team-details-card">
+    <mat-card-title>{{ footballTeam.name }}</mat-card-title>
+    <mat-card-content>
+      <p>Nickname: {{ footballTeam.nickname }}</p>
+      <p>Founding Year: {{ footballTeam.foundingYear }}</p>
+      <p>Value: {{ footballTeam.value }}</p>
+      <p>Professional Status: {{ footballTeam.professionalStatus }}</p>
+      <ng-container *ngIf="footballTeam.content?.length">
+        <p>Players:</p>
+        <mat-list>
+          <mat-list-item *ngFor="let player of footballTeam.content; let i = index">
+            {{ i + 1 }}. {{ player.name }}
+          </mat-list-item>
+        </mat-list>
+      </ng-container>
+      <ng-container *ngIf="!footballTeam.content?.length">
+        <p>This team has no players.</p>
+      </ng-container>
+    </mat-card-content>
+  </mat-card>
 </ng-container>
 
-<button (click)="goToEdit(footballTeamID)">Edit the selected Football Team</button>
-<button (click)="goToDelete(footballTeamID)">Delete the selected Football Team</button>
+<mat-card-actions class="football-team-details-actions">
+  <button mat-raised-button color="primary" (click)="goToEdit(footballTeamID)">
+    Edit the selected Football Team
+  </button>
+  <button mat-raised-button color="warn" (click)="goToDelete(footballTeamID)">
+    Delete the selected Football Team
+  </button>
+</mat-card-actions>

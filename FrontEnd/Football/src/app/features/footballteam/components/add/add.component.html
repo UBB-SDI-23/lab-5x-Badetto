@@ -1,15 +1,26 @@
-<h2>Add a football team:</h2>
-<form (submit)="addFootballTeam()">
+<h2 class="form-heading">Add a football team:</h2>
+<form class="form-container" (submit)="addFootballTeam()">
+  <div class="form-field">
     <label for="name">Name:</label>
-    <input type="text" name="name" [(ngModel)]="name"> <br>
+    <input type="text" name="name" [(ngModel)]="name" class="input-field">
+  </div>
+  <div class="form-field">
     <label for="nickname">Nickname:</label>
-    <input type="text" name="nickname" [(ngModel)]="nickname"> <br>
+    <input type="text" name="nickname" [(ngModel)]="nickname" class="input-field">
+  </div>
+  <div class="form-field">
     <label for="foundingYear">Founding Year:</label>
-    <input type="number" name="foundingYear" [(ngModel)]="foundingYear"> <br>
+    <input type="number" name="foundingYear" [(ngModel)]="foundingYear" class="input-field">
+  </div>
+  <div class="form-field">
     <label for="value">Value:</label>
-    <input type="number" name="value" [(ngModel)]="value"> <br>
+    <input type="number" name="value" [(ngModel)]="value" class="input-field">
+  </div>
+  <div class="form-field">
     <label for="professionalStatus">Professional Status:</label>
-    <input type="text" name="professionalStatus" [(ngModel)]="professionalStatus">
-    <br>
-    <button type="submit">Add Football Team</button>
+    <input type="text" name="professionalStatus" [(ngModel)]="professionalStatus" class="input-field">
+  </div>
+  <div class="form-button">
+    <button type="submit" class="button">Add Football Team</button>
+  </div>
 </form>

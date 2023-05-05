@@ -1,8 +1,5 @@
-<h2>Are you sure you want to delete the selected team?</h2>
-<form (submit)="deleteFootballTeam()">
-    <button type="submit">Delete Football Team</button>
-</form>
-
-<form (submit)="cancel()">
-    <button type="submit">CANCEL</button>
-</form>    
+<h2 mat-dialog-title>Are you sure you want to delete the selected team?</h2>
+<mat-dialog-actions align="end">
+  <button mat-button class="delete-button" (click)="deleteFootballTeam()">Delete Football Team</button>
+  <button mat-button class="cancel-button" (click)="cancel()">Cancel</button>
+</mat-dialog-actions>
