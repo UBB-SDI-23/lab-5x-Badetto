@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { AddFootballTeamDto, EditFootballTeamDto, FootballTeam } from 'src/app/features/footballteam/models/footballteams.models';
 import { NrPlayers } from 'src/app/features/footballteam/models/nrplayers.models';
 
@@ -9,13 +9,23 @@ import { NrPlayers } from 'src/app/features/footballteam/models/nrplayers.models
 })
 export class ApiService {
 
-  //baseurl = 'https://sdi-assignment.mooo.com/api/';
-  baseurl = 'http://127.0.0.1:8000/api/';
+  baseurl = 'https://sdi-assignment.mooo.com/api/';
+  //baseurl = 'http://127.0.0.1:8000/api/';
   
   constructor(private http: HttpClient) { }
 
-  getFootballTeams() : Observable<FootballTeam[]>{  
-    return this.http.get(`${this.baseurl}football-team/`) as Observable<FootballTeam[]>
+  getFootballTeams(pageIndex: number, pageSize: number): Observable<FootballTeam[]> {
+    const params = {
+      page: pageIndex,
+      page_size: pageSize
+    };
+  
+    return this.http.get(`${this.baseurl}football-team/`, { params }).pipe(
+      map(response => {
+        const data = response as any;
+        return data.results as FootballTeam[];
+      })
+    );
   }
   getFootBallTeamAndPlayers(courseId: number): Observable<FootballTeam>{
     return this.http.get(`${this.baseurl}football-team/${courseId}/`) as Observable<FootballTeam>

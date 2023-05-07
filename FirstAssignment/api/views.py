@@ -2,6 +2,7 @@ from django.db.models import Avg, Count
 from rest_framework import generics
 from rest_framework.response import Response
 
+from FirstAssignment.pagination import FootballTeamPagination
 from .models import FootballTeam, Player, Sponsor, Has
 from .serializers import FootballTeamSerializer, PlayerSerializer, SponsorSerializer,\
     FootballTeamIdSerializer, PlayerJustIdSerializer, HasSerializer, FootballTeamSponsorSerializer,\
@@ -116,3 +117,9 @@ class HasCreateView(generics.CreateAPIView):
             'sponsor': sponsor,
             'has': has.id
         })
+
+
+class FootballTeamListView(generics.ListAPIView):
+    queryset = FootballTeam.objects.all()
+    serializer_class = FootballTeamSerializer
+    pagination_class = FootballTeamPagination

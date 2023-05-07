@@ -1,11 +1,11 @@
 from django.urls import path
 from .views import FootballTeamList, PlayerList, PlayerDetail, SponsorList, FootballTeamIdDetail, HasList, HasDetail, \
     FootballTeamsByAvgNetWorthDeals, FootballTeamsByNrOfSponsors, SponsorsWithFootballTeamsDetail, HasCreateView, \
-    FootballTeamsByNrOfPlayers
+    FootballTeamsByNrOfPlayers, FootballTeamListView
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 urlpatterns = [
-    path('football-team/', FootballTeamList.as_view()),
+    path('football-team/', FootballTeamListView.as_view()),
     path('football-team/<int:pk>/', FootballTeamIdDetail.as_view()),
     path('player/',  PlayerList.as_view()),
     path('player/<int:pk>/', PlayerDetail.as_view()),
