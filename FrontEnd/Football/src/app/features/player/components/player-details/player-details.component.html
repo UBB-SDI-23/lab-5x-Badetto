@@ -1,0 +1,39 @@
+<ng-container *ngIf="player">
+    <mat-card class="football-team-details-card">
+      <mat-card-title>{{ player.name }}</mat-card-title>
+      <mat-card-content>
+        <p>Name: {{ player.name }}</p>
+        <p>Number: {{ player.number }}</p>
+        <p>Age: {{ player.age }}</p>
+        <p>Rating: {{ player.rating }}</p>
+        <p>Position: {{ player.position }}</p>
+        <p>Nationality: {{ player.nationality }}</p>
+        <ng-container *ngIf="player.team?.name">
+          <p>Team:</p>
+          <mat-list>
+            <mat-list-item >
+                <p>{{ player.team.name }}</p>
+            </mat-list-item>
+            <mat-list-item >
+                <p>{{ player.team.foundingYear}}</p>
+            </mat-list-item>
+            <mat-list-item>
+                <p>{{ player.team.professionalStatus }}</p>
+            </mat-list-item>
+          </mat-list>
+        </ng-container>
+        <ng-container *ngIf="!player.team?.name">
+          <p>This player has no tean.</p>
+        </ng-container>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+  
+  <mat-card-actions class="football-team-details-actions">
+    <button mat-raised-button color="primary" (click)="goToEdit(playerID)">
+      Edit the selected Player
+    </button>
+    <button mat-raised-button color="warn" (click)="goToDelete(playerID)">
+      Delete the selected Player
+    </button>
+  </mat-card-actions>

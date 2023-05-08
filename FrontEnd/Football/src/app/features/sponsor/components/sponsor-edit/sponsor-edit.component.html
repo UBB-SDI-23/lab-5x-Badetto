@@ -1,0 +1,29 @@
+<h2 class="header">Edit a Sponsor:</h2>
+<form class="form" (submit)="editSponsor()">
+  <mat-form-field class="input-field">
+    <mat-label>Name</mat-label>
+    <input matInput type="text" name="name" [(ngModel)]="name">
+  </mat-form-field>
+
+  <mat-form-field class="input-field">
+    <mat-label>Founding Year</mat-label>
+    <input matInput type="number" name="foundingYear" [(ngModel)]="foundingYear">
+  </mat-form-field>
+
+  <mat-form-field class="input-field">
+    <mat-label>Nationality</mat-label>
+    <input matInput type="text" name="nationality" [(ngModel)]="nationality">
+  </mat-form-field>
+
+  <mat-form-field class="input-field">
+    <mat-label>NetWorth</mat-label>
+    <input matInput type="number" name="netWorth" [(ngModel)]="netWorth">
+  </mat-form-field>
+
+  <mat-form-field class="input-field">
+    <mat-label>Domain</mat-label>
+    <input matInput type="text" name="domain" [(ngModel)]="domain">
+  </mat-form-field>
+
+  <button mat-raised-button type="submit">Edit Sponsor</button>
+</form>

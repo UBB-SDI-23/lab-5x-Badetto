@@ -34,9 +34,9 @@ $$;
 -- Batch insert 10000 football teams at a time
 DO $$
 DECLARE
-  batch_size INTEGER := 10000;
+  batch_size INTEGER := 100;
 BEGIN
-  FOR i IN 0..99 LOOP
+  FOR i IN 0..9 LOOP
     INSERT INTO api_footballteam (name, nickname, "foundingYear", value, "professionalStatus")
     SELECT
       'Team ' || s.id,
@@ -68,7 +68,7 @@ SELECT
   CASE WHEN s.id % 2 = 0 THEN 'Substitute' ELSE 'Starter' END,
   'Nationality ' || (s.id % 100),
   (random() * 999999 + 1)::integer  -- random team assignment
-FROM generate_series(1, 1000000) s(id);
+FROM generate_series(1, 1000) s(id);
 
 DO language plpgsql $$
 BEGIN
@@ -83,7 +83,7 @@ SELECT
   'Nationality ' || (s.id % 100),
   100000 + (s.id * 1000),
   'Domain ' || s.id
-FROM generate_series(1, 1000000) s(id);
+FROM generate_series(1, 1000) s(id);
 
 DO language plpgsql $$
 BEGIN
@@ -93,7 +93,7 @@ $$;
 
 DO $$
 BEGIN
-  FOR i IN 0..999 LOOP
+  FOR i IN 0..2 LOOP
     INSERT INTO api_has ("dealValue", type, team_id, sponsor_id)
     SELECT
       100000 + ((i * 10000) + s.id) * 100,

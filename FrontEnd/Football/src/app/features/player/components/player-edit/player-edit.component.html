@@ -1,0 +1,34 @@
+<h2 class="header">Edit the Selected Player:</h2>
+<form class="form" (submit)="editPlayer()">
+  <mat-form-field class="input-field">
+    <mat-label>Name</mat-label>
+    <input matInput type="text" name="name" [(ngModel)]="name">
+  </mat-form-field>
+
+  <mat-form-field class="input-field">
+    <mat-label>Number</mat-label>
+    <input matInput type="number" name="number" [(ngModel)]="number">
+  </mat-form-field>
+
+  <mat-form-field class="input-field">
+    <mat-label>Age</mat-label>
+    <input matInput type="number" name="age" [(ngModel)]="age">
+  </mat-form-field>
+
+  <mat-form-field class="input-field">
+    <mat-label>Rating</mat-label>
+    <input matInput type="number" name="rating" [(ngModel)]="rating">
+  </mat-form-field>
+
+  <mat-form-field class="input-field">
+    <mat-label>Position</mat-label>
+    <input matInput type="text" name="position" [(ngModel)]="position">
+  </mat-form-field>
+
+  <mat-form-field class="input-field">
+    <mat-label>Nationality</mat-label>
+    <input matInput type="text" name="nationality" [(ngModel)]="nationality">
+  </mat-form-field>
+
+  <button mat-raised-button type="submit">Edit Player</button>
+</form>

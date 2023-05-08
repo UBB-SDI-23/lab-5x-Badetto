@@ -1,0 +1,30 @@
+<h2 class="form-heading">Add a player:</h2>
+<form class="form-container" (submit)="addPlayer()">
+  <div class="form-field">
+    <label for="name">Name:</label>
+    <input type="text" name="name" [(ngModel)]="name" class="input-field">
+  </div>
+  <div class="form-field">
+    <label for="nickname">Number:</label>
+    <input type="number" name="number" [(ngModel)]="number" class="input-field">
+  </div>
+  <div class="form-field">
+    <label for="nickname">Age:</label>
+    <input type="number" name="age" [(ngModel)]="age" class="input-field">
+  </div>
+  <div class="form-field">
+    <label for="nickname">Rating:</label>
+    <input type="number" name="rating" [(ngModel)]="rating" class="input-field">
+  </div>
+  <div class="form-field">
+    <label for="foundingYear">Position:</label>
+    <input type="text" name="position" [(ngModel)]="position" class="input-field">
+  </div>
+  <div class="form-field">
+    <label for="value">Nationality:</label>
+    <input type="text" name="nationality" [(ngModel)]="nationality" class="input-field">
+  </div>
+  <div class="form-button">
+    <button type="submit" class="button">Add Football Team</button>
+  </div>
+</form>

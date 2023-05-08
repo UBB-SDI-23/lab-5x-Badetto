@@ -1,0 +1,31 @@
+<ng-container *ngIf="sponsor">
+    <mat-card class="football-team-details-card">
+      <mat-card-title>{{ sponsor.name }}</mat-card-title>
+      <mat-card-content>
+        <p>Founding Year: {{ sponsor.foundingYear }}</p>
+        <p>Nationality: {{ sponsor.nationality }}</p>
+        <p>NetWorth: {{ sponsor.netWorth }}</p>
+        <p>Domain: {{ sponsor.domain }}</p>
+        <ng-container *ngIf="sponsor.sponsors?.length">
+          <p>Sponsored teams:</p>
+          <mat-list>
+            <mat-list-item *ngFor="let sponsorship of sponsor.sponsors; let i = index">
+              {{ i + 1 }}. Team: {{ sponsorship.team }} DealValue: {{ sponsorship.dealValue }} 
+            </mat-list-item>
+          </mat-list>
+        </ng-container>
+        <ng-container *ngIf="!sponsor.sponsors?.length">
+          <p>This sponsor has no active sponsorships.</p>
+        </ng-container>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+  
+  <mat-card-actions class="football-team-details-actions">
+    <button mat-raised-button color="primary" (click)="goToEdit(sponsorID)">
+      Edit the selected Sponsor
+    </button>
+    <button mat-raised-button color="warn" (click)="goToDelete(sponsorID)">
+      Delete the selected Sponsor
+    </button>
+  </mat-card-actions>

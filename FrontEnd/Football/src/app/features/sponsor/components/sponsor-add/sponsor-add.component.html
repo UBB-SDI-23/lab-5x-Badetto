@@ -1,0 +1,26 @@
+<h2 class="form-heading">Add a sponsor:</h2>
+<form class="form-container" (submit)="addSponsor()">
+  <div class="form-field">
+    <label for="name">Name:</label>
+    <input type="text" name="name" [(ngModel)]="name" class="input-field">
+  </div>
+  <div class="form-field">
+    <label for="foundingYear">FoundingYear:</label>
+    <input type="number" name="foundingYear" [(ngModel)]="foundingYear" class="input-field">
+  </div>
+  <div class="form-field">
+    <label for="nationality">Nationality:</label>
+    <input type="text" name="nationality" [(ngModel)]="nationality" class="input-field">
+  </div>
+  <div class="form-field">
+    <label for="netWorth">NetWorth:</label>
+    <input type="number" name="netWorth" [(ngModel)]="netWorth" class="input-field">
+  </div>
+  <div class="form-field">
+    <label for="domain">Domain:</label>
+    <input type="text" name="domain" [(ngModel)]="domain" class="input-field">
+  </div>
+  <div class="form-button">
+    <button type="submit" class="button">Add Sponsor</button>
+  </div>
+</form>

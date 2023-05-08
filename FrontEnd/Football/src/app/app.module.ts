@@ -23,6 +23,16 @@ import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { PlayerOverviewComponent } from './features/player/components/player-overview/player-overview.component';
+import { PlayerDetailsComponent } from './features/player/components/player-details/player-details.component';
+import { PlayerAddComponent } from './features/player/components/player-add/player-add.component';
+import { PlayerEditComponent } from './features/player/components/player-edit/player-edit.component';
+import { PlayerDeleteComponent } from './features/player/components/player-delete/player-delete.component';
+import { SponsorOverviewComponent } from './features/sponsor/components/sponsor-overview/sponsor-overview.component';
+import { SponsorAddComponent } from './features/sponsor/components/sponsor-add/sponsor-add.component';
+import { SponsorEditComponent } from './features/sponsor/components/sponsor-edit/sponsor-edit.component';
+import { SponsorDetailsComponent } from './features/sponsor/components/sponsor-details/sponsor-details.component';
+import { SponsorDeleteComponent } from './features/sponsor/components/sponsor-delete/sponsor-delete.component';
 
 
 @NgModule({
@@ -33,7 +43,17 @@ import { MatInputModule } from '@angular/material/input';
     DetailsComponent,
     AddComponent,
     EditComponent,
-    DeleteComponent
+    DeleteComponent,
+    PlayerOverviewComponent,
+    PlayerDetailsComponent,
+    PlayerAddComponent,
+    PlayerEditComponent,
+    PlayerDeleteComponent,
+    SponsorOverviewComponent,
+    SponsorAddComponent,
+    SponsorEditComponent,
+    SponsorDetailsComponent,
+    SponsorDeleteComponent
   ],
   imports: [
     BrowserModule,

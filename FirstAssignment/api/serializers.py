@@ -66,7 +66,7 @@ class FootballTeamNrPlayerSerializer(serializers.ModelSerializer):
 
 
 class SponsorsWithFootballTeamsSerializer(serializers.ModelSerializer):
-    sponsors = HasSerializer(many=True)
+    sponsors = HasSerializer(many=True, read_only=True)
 
     class Meta:
         model = Sponsor
