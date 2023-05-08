@@ -11,8 +11,8 @@ import { AddSponsor, Sponsor, SponsorDetails } from 'src/app/features/sponsor/mo
 })
 export class ApiService {
 
-  //baseurl = 'https://sdi-assignment.mooo.com/api/';
-  baseurl = 'http://127.0.0.1:8000/api/';
+  baseurl = 'https://sdi-assignment.mooo.com/api/';
+  //baseurl = 'http://127.0.0.1:8000/api/';
   
   constructor(private http: HttpClient) { }
 
